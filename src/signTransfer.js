@@ -1,13 +1,21 @@
 const { ethers, BigNumber } = require("ethers");
 
-async function sign(opts) {
-    const { invoiceId, fromAddress, toAddress, tokenAddress, amount, usd } =
-        opts;
+async function signTransfer(opts) {
+    const {
+        invoiceId,
+        networkId,
+        contractAddress,
+        fromAddress,
+        toAddress,
+        tokenAddress,
+        amount,
+        usd,
+    } = opts;
     const domain = {
         name: "LoopVariableRatesContract",
         version: "1",
-        chainId: process.env.CONTRACT_NETWORK_ID,
-        verifyingContract: process.env.CONTRACT_ADDRESS,
+        chainId: networkId,
+        verifyingContract: contractAddress,
     };
     const types = {
         Transfer: [
@@ -27,10 +35,13 @@ async function sign(opts) {
         amount: BigNumber.from(amount),
         usd: usd,
     };
-    const signer = new ethers.Wallet(process.env.SIGNER_KEY, ethers.provider);
+    const signer = new ethers.Wallet(
+        process.env.LOOP_SIGNER_KEY,
+        ethers.provider
+    );
 
     const signature = await signer._signTypedData(domain, types, transfer);
     return { signature };
 }
 
-module.exports = sign;
+module.exports = signTransfer;

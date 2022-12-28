@@ -1,3 +1,4 @@
 require("dotenv").config();
-const sign = require("./src/sign.js");
-module.exports = { sign };
+const signTransfer = require("./src/signTransfer.js");
+const submitSignedTransfer = require("./src/submitSignedTransfer.js");
+module.exports = { signTransfer, submitSignedTransfer };
