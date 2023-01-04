@@ -1,5 +1,15 @@
 require("dotenv").config();
-const signTransfer = require("./src/signTransfer.js");
-const sendTransfers = require("./src/sendTransfers.js");
-const signSendTransfer = require("./src/signSendTransfer.js");
-module.exports = { signTransfer, signSendTransfer, sendTransfers };
+
+const getTransfers = require("./src/get-transfers.js");
+const signTransfer = require("./src/sign-transfer.js");
+const sendTransfers = require("./src/send-transfers.js");
+const signSendTransfer = require("./src/sign-send-transfer.js");
+const verifyWebhook = require("./src/verify-webhook.js");
+
+module.exports = {
+    verifyWebhook,
+    getTransfers,
+    sendTransfers,
+    signTransfer,
+    signSendTransfer,
+};
