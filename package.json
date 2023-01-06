@@ -1,5 +1,5 @@
 {
-    "name": "loop-sdk",
+    "name": "@loop-crypto/loop-sdk",
     "version": "0.1.0",
     "description": "Loop SDK",
     "main": "index.js",
