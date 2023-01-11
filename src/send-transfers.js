@@ -4,7 +4,7 @@ const loopFetch = require("./utils/loop-fetch.js");
  * This function sends a list of transfers to the Loop API.
  *
  * @param {object[]} transfers - The list of transfers to be sent.
- * @param {string} transfers[].invoiceId - The recipient of the transfer.
+ * @param {string} transfers[].invoiceId - The invoice ID of the transfer.
  * @param {string} transfers[].entityId - Your Loop Entity ID. // TODO: This is not optional when calling the API, which seems to be different from gitbook docs.
  * @param {number} transfers[].networkId - The network ID.
  * @param {string} transfers[].planId - Loop Item ID that is associated with the transfer. // TODO: needs to be renamed to item ID once the backend it renamed
