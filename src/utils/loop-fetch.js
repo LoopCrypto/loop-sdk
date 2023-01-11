@@ -1,15 +1,19 @@
 const fetch = require("node-fetch");
 
-async function loopFetch(path, method, body = null, entityId = null) {
+async function loopFetch(path, method, body = null, queryParams = null) {
     let headers = new Headers();
-    headers.append("entity-id", entityId || process.env.LOOP_API_ID);
+    headers.append("entity-id", process.env.LOOP_API_ID);
     headers.append("api-key", process.env.LOOP_API_KEY);
     if (body) {
         headers.append("Accept", "application/json");
         headers.append("Content-Type", "application/json");
     }
+    let path = `${process.env.LOOP_API_URL}${path}`;
+    if (queryParams) {
+        path = path + new URLSearchParams(queryParams);
+    }
 
-    const response = await fetch(`${process.env.LOOP_API_URL}${path}`, {
+    const response = await fetch(path, {
         method: method,
         headers: headers,
         body: body,
