@@ -13,7 +13,7 @@ async function cancelTransfers(transferIds) {
     const response = await loopFetch(
         "/api/v1/transfers",
         "PATCH",
-        JSON.stringify({ transfersIds: transferIds })
+        JSON.stringify({ transferIds: transferIds })
     );
     return response.transfers;
 }
