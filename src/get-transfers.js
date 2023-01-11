@@ -6,7 +6,7 @@ const loopFetch = require("./utils/loop-fetch.js");
  * @param {object} opts - The query params to filter the transfers. If null, the request will return all transfers under your main entity.
  * @param {string} opts.transferId - The ID of the transfer you are looking for.
  * @param {string} opts.wallet - Will return all transfers with a from address or to address that matches with the wallet.
- * @param {string} opts.networkId - The network Id of the transfers.
+ * @param {number} opts.networkId - The network Id of the transfers.
  * @param {string} opts.entityId - The entity Id that the transfers are associated with. This can be your env var entity ID or a child entity ID.
  */
 async function getTransfers(opts) {

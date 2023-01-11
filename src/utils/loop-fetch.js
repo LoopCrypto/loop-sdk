@@ -8,12 +8,12 @@ async function loopFetch(path, method, body = null, queryParams = null) {
         headers.append("Accept", "application/json");
         headers.append("Content-Type", "application/json");
     }
-    let path = `${process.env.LOOP_API_URL}${path}`;
+    let fetchUrl = `${process.env.LOOP_API_URL}${path}`;
     if (queryParams) {
-        path = path + new URLSearchParams(queryParams);
+        fetchUrl = fetchUrl + `?${new URLSearchParams(queryParams)}`;
     }
 
-    const response = await fetch(path, {
+    const response = await fetch(fetchUrl, {
         method: method,
         headers: headers,
         body: body,
