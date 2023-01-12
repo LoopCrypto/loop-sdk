@@ -1,5 +1,5 @@
 {
-    "name": "loop-sdk",
+    "name": "@loop-crypto/loop-sdk",
     "version": "0.1.0",
     "description": "Loop SDK",
     "main": "index.js",
@@ -20,6 +20,7 @@
     "dependencies": {
         "dotenv": "^16.0.3",
         "ethers": "^5.7.2",
-        "node-fetch": "2.6.7"
+        "node-fetch": "2.6.7",
+        "crypto-js": "^4.1.1"
     }
 }
