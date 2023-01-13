@@ -1,4 +1,6 @@
 const fetch = require("node-fetch");
+const errors = require("../core/errors.js");
+const LoopRequestError = errors.LoopRequestError;
 
 async function loopFetch(path, method, body = null, queryParams = null) {
     let headers = new Headers();
@@ -21,8 +23,12 @@ async function loopFetch(path, method, body = null, queryParams = null) {
     if (response.ok) {
         return await response.json();
     } else {
-        // TODO: should probably define better error codes for the SDK.
-        throw new Error((await response.json()).message);
+        const errorResponse = await response.json();
+        throw new LoopRequestError(
+            errorResponse.message,
+            errorResponse.code,
+            errorResponse.results
+        );
     }
 }
 
