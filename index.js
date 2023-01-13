@@ -7,6 +7,7 @@ const loop = {
     cancelTransfers: require("./src/actions/cancel-transfers.js"),
     signTransfer: require("./src/actions/sign-transfer.js"),
     signSendTransfer: require("./src/actions/sign-send-transfer.js"),
+    utils: require("./src/utils/index.js"),
 };
 
 module.exports = {
