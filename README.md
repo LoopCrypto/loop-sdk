@@ -25,6 +25,31 @@ LOOP_WEBHOOK_SECRET=<YOUR LOOP WEBHOOK SECRET>
 ```
 For security purposes, *DO NOT* commit your.env file into your github repo so that your keys are not exposed.
 
+## Usage
+
+- CJS:
+```
+const { loop } = require("@loop-crypto/loop-sdk");
+const result = await loop.getTransfers({
+    networkId: 5,
+});
+```
+
+- ESM:
+```
+import { loop } from "@loop-crypto/loop-sdk";
+
+const result = loop.signSendTransfer({
+    invoiceId: `${email}-${plan}-${addOnPlans}-0`,
+    itemId: planId,
+    fromAddress: subscriber,
+    toAddress: toAddress,
+    tokenAddress: paymentTokenAddress,
+    amount: totalFirstBillingAmountCents,
+    usd: true,
+});
+```
+
 ## Integration
 
 See https://github.com/LoopCrypto/loop-demo-app for an example of how to integrate with our webhook and perform actions using the SDK.
