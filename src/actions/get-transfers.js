@@ -1,4 +1,4 @@
-const loopFetch = require("./utils/loop-fetch.js");
+const loopFetch = require("../utils/loop-fetch.js");
 
 /**
  * This function gets all transfers that belongs to your entity and matches the query.

@@ -1,4 +1,4 @@
-const loopFetch = require("./utils/loop-fetch.js");
+const loopFetch = require("../utils/loop-fetch.js");
 
 /**
  * This function sends a list of transfers to the Loop API.

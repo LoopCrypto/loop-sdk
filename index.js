@@ -1,12 +1,13 @@
 require("dotenv").config();
 
 const loop = {
-    verifyWebhook: require("./src/verify-webhook.js"),
-    getTransfers: require("./src/get-transfers.js"),
-    sendTransfers: require("./src/send-transfers.js"),
-    cancelTransfers: require("./src/cancel-transfers.js"),
-    signTransfer: require("./src/sign-transfer.js"),
-    signSendTransfer: require("./src/sign-send-transfer.js"),
+    verifyWebhook: require("./src/actions/verify-webhook.js"),
+    getTransfers: require("./src/actions/get-transfers.js"),
+    sendTransfers: require("./src/actions/send-transfers.js"),
+    cancelTransfers: require("./src/actions/cancel-transfers.js"),
+    signTransfer: require("./src/actions/sign-transfer.js"),
+    signSendTransfer: require("./src/actions/sign-send-transfer.js"),
+    utils: require("./src/utils/index.js"),
 };
 
 module.exports = {
