@@ -27,4 +27,4 @@ For security purposes, *DO NOT* commit your.env file into your github repo so th
 
 ## Integration
 
-See https://github.com/LoopCrypto/loop-demo-app for an example of how to integrate with our webhook.
+See https://github.com/LoopCrypto/loop-demo-app for an example of how to integrate with our webhook and perform actions using the SDK.
