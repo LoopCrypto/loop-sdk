@@ -38,7 +38,6 @@ const result = await loop.getTransfers({
 - ESM:
 ```
 import { loop } from "@loop-crypto/loop-sdk";
-
 const result = loop.signSendTransfer({
     invoiceId: `${email}-${plan}-${addOnPlans}-0`,
     itemId: planId,
