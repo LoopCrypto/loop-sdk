@@ -3,7 +3,7 @@ const errors = require("../core/errors.js");
 const LoopRequestError = errors.LoopRequestError;
 
 async function loopFetch(path, method, body = null, queryParams = null) {
-    let headers = new Headers();
+    let headers = new fetch.Headers();
     headers.append("entity-id", process.env.LOOP_API_ID);
     headers.append("api-key", process.env.LOOP_API_KEY);
     if (body) {
