@@ -8,7 +8,7 @@ const loopFetch = require("../utils/loop-fetch.js");
  * @param {string} transfers[].invoiceId - The invoice ID of the transfer.
  * @param {string} transfers[].entityId - Your Loop Entity ID.
  * @param {number} transfers[].networkId - The network ID.
- * @param {string} transfers[].planId - Loop Item ID that is associated with the transfer. // TODO: needs to be renamed to item ID once the backend it renamed
+ * @param {string} transfers[].itemId - Loop Item ID that is associated with the transfer.
  * @param {string} transfers[].from - Wallet address where funds are pulled from.
  * @param {string} transfers[].to - Wallet address where funds are going to.
  * @param {string} transfers[].token - Address of the token used to pay.
