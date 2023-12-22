@@ -42,7 +42,7 @@ async function signSendTransfer(opts) {
             usd: usd,
             networkId: parseInt(process.env.LOOP_CONTRACT_NETWORK_ID),
             entityId: entityId || process.env.LOOP_API_ID,
-            planId: itemId,
+            itemId: itemId,
             billDate: billDate || 0,
             signature: signature,
         },
